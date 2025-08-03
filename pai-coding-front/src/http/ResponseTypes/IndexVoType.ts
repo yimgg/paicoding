@@ -15,9 +15,11 @@ interface CarouselItem {
 export interface IndexVoResponse {
   categories: ArticleCategoryType[];
   topArticles: ArticleType[];
+  sideBarItems: SideBarItem[];
 }
 
 export const defaultIndexVoResponse = {
   categories: [],
   topArticles: [],
+  sideBarItems: [],
 }

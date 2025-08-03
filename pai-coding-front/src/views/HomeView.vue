@@ -54,10 +54,10 @@
               </div>
 
               <div class="home-right">
-                <!-- 侧边公告 -->
-<!--                <div v-if="vo.sideBarItems">-->
-<!--                  <SideBar :sidebar-items="vo.sideBarItems"></SideBar>-->
-<!--                </div>-->
+                <!-- 侧边栏 -->
+                <div v-if="vo.sideBarItems && vo.sideBarItems.length > 0">
+                  <SideBar :sidebar-items="vo.sideBarItems"></SideBar>
+                </div>
               </div>
             </div>
           </div>
@@ -110,6 +110,10 @@ onMounted(() => {
         Object.assign(vo.categories, response.data.result.categories)
         // @ts-ignore
         Object.assign(articles, response.data.result.articles)
+        // 处理侧边栏数据
+        if (response.data.result.sideBarItems) {
+          Object.assign(vo.sideBarItems, response.data.result.sideBarItems)
+        }
         totalPage.value = Number(response.data.result.articles.pages)
         currentPage.value = Number(response.data.result.articles.current)
         console.log(articles)
@@ -138,6 +142,10 @@ const onPageSizeChange = (newPageSize: number) => {
         Object.assign(vo.topArticles, response.data.result.topArticles)
         Object.assign(vo.categories, response.data.result.categories)
         Object.assign(articles, response.data.result.articles)
+        // 处理侧边栏数据
+        if (response.data.result.sideBarItems) {
+          Object.assign(vo.sideBarItems, response.data.result.sideBarItems)
+        }
         totalPage.value = Number(response.data.result.articles.pages)
         currentPage.value = Number(response.data.result.articles.current)
         console.log(articles)
@@ -158,6 +166,10 @@ const onCurrentPageChange = (newCurrentPage: number) => {
         Object.assign(vo.topArticles, response.data.result.topArticles)
         Object.assign(vo.categories, response.data.result.categories)
         Object.assign(articles, response.data.result.articles)
+        // 处理侧边栏数据
+        if (response.data.result.sideBarItems) {
+          Object.assign(vo.sideBarItems, response.data.result.sideBarItems)
+        }
         totalPage.value = Number(response.data.result.articles.pages)
         currentPage.value = Number(response.data.result.articles.current)
         console.log(articles)

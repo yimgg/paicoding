@@ -46,6 +46,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.util.*;
+import java.util.ArrayList;
 import java.util.concurrent.TimeoutException;
 
 /**
@@ -226,7 +227,17 @@ public class ArticleRestController {
         selectedCategory = selectedCategory == null ? CategoryDTO.DEFAULT_CATEGORY : selectedCategory;
         List<ArticleDTO> topArticles = indexRecommendHelper.topArticleList(selectedCategory);
 
-        CategoryArticlesResponseDTO responseDTO = new CategoryArticlesResponseDTO(articles, categories, topArticles);
+        // 获取侧边栏数据，做好判空检查
+        List<SideBarDTO> sideBarItems = null;
+        try {
+            // 获取首页侧边栏数据，这里传入默认用户ID 0，表示未登录用户
+            sideBarItems = sidebarService.queryHomeSidebarList();
+        } catch (Exception e) {
+            log.warn("获取首页侧边栏数据失败: {}", e.getMessage());
+            sideBarItems = new ArrayList<>();
+        }
+
+        CategoryArticlesResponseDTO responseDTO = new CategoryArticlesResponseDTO(articles, categories, topArticles, sideBarItems);
         return ResultVo.ok(responseDTO);
     }
 
