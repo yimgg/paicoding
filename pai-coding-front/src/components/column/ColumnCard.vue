@@ -92,5 +92,152 @@ const props = defineProps<{
 
 
 <style scoped>
+.item {
+  display: flex;
+  padding: 30px;
+  box-sizing: border-box;
+  position: relative;
+  border-bottom: #e5e5e5 1px solid;
+  width: 100%;
+  max-width: 800px;
+  min-width: 800px;
+  min-height: 240px;
+  background: white;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
 
+.poster {
+  width: 140px;
+  height: 180px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.poster img {
+  width: 100%;
+  height: 100%;
+  border-radius: 2px;
+}
+
+.info {
+  position: relative;
+  flex-grow: 1;
+  overflow: hidden;
+  box-sizing: border-box;
+  font-size: 20px;
+  padding-left: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 180px;
+}
+
+.info .messages {
+  font-size: 18px;
+}
+
+.author .name {
+  color: #666;
+  font-size: 18px;
+}
+
+.title {
+  font-size: 28px;
+  line-height: 36px;
+  margin-bottom: 15px;
+}
+
+.info .desc {
+  margin-top: 12px;
+  font-size: 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  color: #666;
+  flex-grow: 1;
+}
+
+.other {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  color: #8a919f;
+}
+
+.author {
+  margin-top: 8px;
+}
+
+.new-tag-wrap {
+  padding: 0 8px;
+  height: 24px;
+  line-height: 24px;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 2px;
+  display: inline-block;
+  vertical-align: middle;
+  cursor: default;
+  margin-right: 4px;
+  transform: translateY(-3px);
+  background-color: #ED722E;
+}
+
+.self-description {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-left: 6px;
+  font-size: 18px;
+  color: #666;
+}
+
+.text-highlight {
+  color: #333;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 768px) {
+  .item {
+    padding: 20px;
+    margin-bottom: 20px;
+    min-height: 200px;
+  }
+
+  .poster {
+    width: 100px;
+    height: 150px;
+  }
+
+  .title {
+    font-size: 22px;
+    line-height: 30px;
+  }
+  
+  .info {
+    font-size: 16px;
+    padding-left: 20px;
+    min-height: 150px;
+  }
+  
+  .info .messages {
+    font-size: 14px;
+  }
+  
+  .author .name {
+    font-size: 14px;
+  }
+  
+  .info .desc {
+    font-size: 14px;
+  }
+  
+  .self-description {
+    font-size: 14px;
+  }
+}
 </style>

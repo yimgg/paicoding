@@ -7,7 +7,7 @@
 <!--        TODO 加上换页的分页按钮-->
         <!-- 文章列表 -->
         <div class="bg-color-white m-2">
-          <div id="articleList">
+          <div id="articleList" class="column-list-container">
               <ColumnList :columns="vo.columnPage.records"></ColumnList>
           </div>
         </div>
@@ -84,6 +84,35 @@ const loginDialogClicked = ref(false)
 
 .home{
   min-height: calc(100vh - var(--header-height));
+}
+
+.custom-home-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 1400px;
+  margin: 0 auto;
+  gap: 30px;
+}
+
+.column-list-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.custom-home-body {
+  flex: 0 0 auto;
+  max-width: 800px;
+  width: 800px;
+  margin: 0;
+}
+
+.custom-home-right {
+  width: 400px;
+  margin-left: 30px;
 }
 
 </style>
