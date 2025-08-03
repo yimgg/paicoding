@@ -43,12 +43,12 @@ export default defineConfig((mode: ConfigEnv): UserConfig => {
 			// 代理跨域（mock 不需要配置，这里只是个示例）
 			proxy: {
 				"/admin": {
-					target: "http://127.0.0.1:8080/",
+					target: "http://127.0.0.1:8081/",
 					changeOrigin: true,
 					rewrite: path => path.replace(/^\/api/, "")
 				},
 				"/api/admin": {
-					target: "http://127.0.0.1:8080/",
+					target: "http://127.0.0.1:8081/",
 					changeOrigin: true
 				}
 			}
@@ -67,17 +67,17 @@ export default defineConfig((mode: ConfigEnv): UserConfig => {
 				iconDirs: [resolve(process.cwd(), "src/assets/icons")],
 				symbolId: "icon-[dir]-[name]"
 			}),
-			createStyleImportPlugin({
-				libs: [
-					{
-						libraryName: "antd",
-						esModule: true,
-						resolveStyle: (name: any) => {
-							return `antd/es/${name}/style/index`;
-						}
-					}
-				]
-			}),
+			// createStyleImportPlugin({
+			// 	libs: [
+			// 		{
+			// 			libraryName: "antd",
+			// 			esModule: true,
+			// 			resolveStyle: (name: any) => {
+			// 				return `antd/es/${name}/style/index`;
+			// 			}
+			// 		}
+			// 	]
+			// }),
 			// * EsLint 报错信息显示在浏览器界面上
 			eslintPlugin(),
 			// * 是否生成包预览
