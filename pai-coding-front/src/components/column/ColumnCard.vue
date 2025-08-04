@@ -94,23 +94,23 @@ const props = defineProps<{
 <style scoped>
 .item {
   display: flex;
-  padding: 30px;
+  padding: 25px;
   box-sizing: border-box;
   position: relative;
   border-bottom: #e5e5e5 1px solid;
   width: 100%;
-  max-width: 800px;
-  min-width: 800px;
+  max-width: 780px;
+  min-width: 780px;
   min-height: 240px;
   background: white;
   border-radius: 8px;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .poster {
-  width: 140px;
-  height: 180px;
+  width: 120px;
+  height: 160px;
   flex-shrink: 0;
   position: relative;
 }
@@ -126,32 +126,32 @@ const props = defineProps<{
   flex-grow: 1;
   overflow: hidden;
   box-sizing: border-box;
-  font-size: 20px;
-  padding-left: 30px;
+  font-size: 18px;
+  padding-left: 25px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 180px;
+  min-height: 160px;
 }
 
 .info .messages {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .author .name {
   color: #666;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .title {
-  font-size: 28px;
-  line-height: 36px;
-  margin-bottom: 15px;
+  font-size: 24px;
+  line-height: 32px;
+  margin-bottom: 12px;
 }
 
 .info .desc {
-  margin-top: 12px;
-  font-size: 18px;
+  margin-top: 10px;
+  font-size: 16px;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -162,14 +162,14 @@ const props = defineProps<{
 }
 
 .other {
-  margin-top: 8px;
+  margin-top: 6px;
   display: flex;
   align-items: center;
   color: #8a919f;
 }
 
 .author {
-  margin-top: 8px;
+  margin-top: 6px;
 }
 
 .new-tag-wrap {
@@ -192,7 +192,7 @@ const props = defineProps<{
   overflow: hidden;
   text-overflow: ellipsis;
   margin-left: 6px;
-  font-size: 18px;
+  font-size: 16px;
   color: #666;
 }
 
